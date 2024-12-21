@@ -9,7 +9,7 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
 - Avoir un logiciel de virtualisation ou un serveur pour pouvoir installer Debian 12 comme OS.
-- Avoir téléchargé l'ISO de Debian 12 ([Télécharger ici](https://www.debian.org/download)).
+- Avoir téléchargé l'ISO de Debian 12 (<a href="https://www.debian.org/download" target="_blank">Télécharger ici</a>).
 
 ---
 
