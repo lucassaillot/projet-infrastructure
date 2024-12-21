@@ -4,7 +4,15 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 
 ---
 
-## Obectifs
+## Objectifs
+
+- Configurer et administrer un serveur pour héberger une solution web.  
+- Installer, paramétrer et utiliser des outils fiables et reconnus pour l’hébergement de solutions web.  
+- Déployer un site web, comme WordPress, sur le serveur.  
+- Automatiser les sauvegardes des fichiers du site et de sa base de données.  
+- Rendre la solution web accessible sur un réseau local, à la fois via son adresse IP et un nom de domaine personnalisé.  
+
+
 
 ---
 
