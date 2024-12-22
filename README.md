@@ -32,6 +32,8 @@ Suivez les étapes ci-dessous pour installer et utiliser ce projet.
 ### 1. Cloner le répertoire
 
 Description : Clonez le dépôt sur votre machine locale.
+![](/img/etape1.png)
+
 
 ```bash
 # Commande pour cloner le dépôt
