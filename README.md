@@ -29,18 +29,21 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
 Suivez les étapes ci-dessous pour installer votre premier serveur.
 
-### 1. Installer l'OS
+### 1. Booter l'ISO
 
 Booter votre serveur ou machine virtuelle sur l'iso debian, vous devrez arriver sur le même écran affiché ci-dessous.  
 Appuyez sur **Graphical install** pour suivre les étapes d'installation dans une interface graphique. Cela ne signifie pas que le serveur sera configuré avec une interface graphique permanente, car celle-ci sera désactivée lors des étapes suivantes.
 
 ![](/img/etape1.png)
 
-<p align="center">
-  <img src="img/etape2.png" alt="Image 1" width="33%" />
-  <img src="img/etape3.png" alt="Image 2" width="33%" />
-  <img src="img/etape4.png" alt="Image 3" width="33%" />
+
+
+### 2. Sélection de la langue
+
+Sélectionnez votre **Langue**, **Pays**, et **Disposition du clavier** :  
+
+<p align="left">
+  <img src="img/etape2.png" alt="Sélectionner la langue" width="50%" />
+  <img src="img/etape3.png" alt="Sélectionner le pays" width="50%" />
+  <img src="img/etape4.png" alt="Sélectionner la disposition du clavier" width="50%" />
 </p>
-
-
-
