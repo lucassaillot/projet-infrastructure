@@ -7,6 +7,7 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 ## Sommaire
 
 - [Étape 1 : Installer l'OS](#Étape-1--installer-los)
+- [Étape 2 : Environnement](#étape-2--environnement)
 
 ---
 
@@ -134,3 +135,5 @@ Voilà vous avez terminé la première étape de ce guide, vous pouvez maintenan
 <p align="left">
   <img src="img/etape18.png" alt="Redémarrer" width="50%" />
 </p>
+
+## Étape 2 : Environnement
