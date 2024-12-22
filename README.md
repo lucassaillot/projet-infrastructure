@@ -25,18 +25,15 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
 ---
 
-## Étapes d'installation du projet
+## Étape 1 : Installer l'OS
 
-Suivez les étapes ci-dessous pour installer votre premier serveur.
-
+Avant de commencer toute manipulation il nous faut une machine sous Linux, dans notre cas nous avons choisi Debian 12.
 ### 1. Booter l'ISO
 
 Booter votre serveur ou machine virtuelle sur l'iso debian, vous devrez arriver sur le même écran affiché ci-dessous.  
 Appuyez sur **Graphical install** pour suivre les étapes d'installation dans une interface graphique. Cela ne signifie pas que le serveur sera configuré avec une interface graphique permanente, car celle-ci sera désactivée lors des étapes suivantes.
 
 ![](/img/etape1.png)
-
-
 
 ### 2. Sélection de la langue
 
@@ -46,4 +43,13 @@ Sélectionnez votre **Langue**, **Pays**, et **Disposition du clavier** :
   <img src="img/etape2.png" alt="Sélectionner la langue" width="50%" />
   <img src="img/etape3.png" alt="Sélectionner le pays" width="50%" />
   <img src="img/etape4.png" alt="Sélectionner la disposition du clavier" width="50%" />
+</p>
+
+### 3. Nom de la machine
+
+Sélectionnez le nom de la machine que vous voulez et laisser vide la case domaine.
+
+<p align="center">
+  <img src="img/etape5.png" alt="Sélectionner la langue" width="50%" />
+  <img src="img/etape6.png" alt="Sélectionner le pays" width="50%" />
 </p>
