@@ -137,3 +137,7 @@ Voilà vous avez terminé la première étape de ce guide, vous pouvez maintenan
 </p>
 
 ## Étape 2 : Environnement
+
+Nous allons dans ces étapes, installer ssh
+
+###
