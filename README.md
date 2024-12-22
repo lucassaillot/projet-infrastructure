@@ -33,7 +33,9 @@ Avant de commencer toute manipulation il nous faut une machine sous Linux, dans 
 Booter votre serveur ou machine virtuelle sur l'iso debian, vous devrez arriver sur le même écran affiché ci-dessous.  
 Appuyez sur **Graphical install** pour suivre les étapes d'installation dans une interface graphique. Cela ne signifie pas que le serveur sera configuré avec une interface graphique permanente, car celle-ci sera désactivée lors des étapes suivantes.
 
-![](/img/etape1.png)
+<p align="left">
+  <img src="img/etape1.png" alt="" width="50%" />
+</p>
 
 ### 2. Sélection de la langue
 
@@ -49,7 +51,25 @@ Sélectionnez votre **Langue**, **Pays**, et **Disposition du clavier** :
 
 Sélectionnez le nom de la machine que vous voulez et laisser vide la case domaine.
 
-<p align="center">
+<p align="left">
   <img src="img/etape5.png" alt="Sélectionner la langue" width="45%" />
   <img src="img/etape6.png" alt="Sélectionner le pays" width="45%" />
 </p>
+
+### 4. Mot de passe root et nouvel utilisateur
+
+Saisissez un mot de passe complexe pour l'utilisateur root
+
+<p align="left">
+  <img src="img/etape7.png" alt="" width="50%" />
+</p>
+
+Nous devons à présent définir un nouvel utilisateur, que nous allons appeler cesi dans notre cas.   
+En premier lieu le nom puis l'identifiant qui servira de nom d'utilisateur pour se connecter.
+
+<p align="left">
+  <img src="img/etape8.png" alt="Sélectionner la langue" width="45%" />
+  <img src="img/etape9.png" alt="Sélectionner le pays" width="45%" />
+</p>
+
+
