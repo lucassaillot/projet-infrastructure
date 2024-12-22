@@ -138,6 +138,18 @@ Voilà vous avez terminé la première étape de ce guide, vous pouvez maintenan
 
 ## Étape 2 : Environnement
 
-Nous allons dans ces étapes, installer ssh
+Nous allons dans ces étapes installer :
+- SSH
+- PHP
+- Apache
+- Base de donnée
 
-###
+### 1. Installer et configurer SSH
+
+Dans un premier temps nous allons se connecter à la Machine :
+
+<p align="left">
+  <img src="img/etape18.png" alt="Redémarrer" width="50%" />
+</p>
+
+
