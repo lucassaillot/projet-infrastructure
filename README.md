@@ -36,4 +36,11 @@ Appuyez sur **Graphical install** pour suivre les étapes d'installation dans un
 
 ![](/img/etape1.png)
 
+<p align="center">
+  <img src="img/etape2.png" alt="Image 1" width="33%" />
+  <img src="img/etape3.png" alt="Image 2" width="33%" />
+  <img src="img/etape4.png" alt="Image 3" width="33%" />
+</p>
+
+
 
