@@ -58,13 +58,13 @@ Sélectionnez le nom de la machine que vous voulez et laisser vide la case domai
 
 ### 4. Mot de passe root et nouvel utilisateur
 
-Saisissez un mot de passe complexe pour l'utilisateur root
+Saisissez un mot de passe complexe pour l'utilisateur **root**.
 
 <p align="left">
   <img src="img/etape7.png" alt="" width="50%" />
 </p>
 
-Nous devons à présent définir un nouvel utilisateur, que nous allons appeler cesi dans notre cas.   
+Nous devons à présent définir un **nouvel utilisateur**, que nous allons appeler cesi dans notre cas.   
 En premier lieu le nom puis l'identifiant qui servira de nom d'utilisateur pour se connecter.
 
 <p align="left">
@@ -72,4 +72,31 @@ En premier lieu le nom puis l'identifiant qui servira de nom d'utilisateur pour 
   <img src="img/etape9.png" alt="Sélectionner le pays" width="45%" />
 </p>
 
+Et enfin le **mot de passe** de ce nouvel utilisateur :
 
+<p align="left">
+  <img src="img/etape10.png" alt="" width="50%" />
+</p>
+
+### 5. Configurer les disques
+
+Sélectionner **"Assisté - utiliser un disque entier"** puis vous pouvez cliquer sur **continuer** jusqu'au moment où vous tomberez sur la même page que la deuxième capture d'écran, à ce moment vous metterez **"Oui"**.
+
+<p align="left">
+  <img src="img/etape11.png" alt="Sélectionner la langue" width="45%" />
+  <img src="img/etape12.png" alt="Sélectionner le pays" width="45%" />
+</p>
+
+### 6. Configurer les paquets
+
+Sélectionner **"France"**.
+
+<p align="left">
+  <img src="img/etape13" alt="" width="50%" />
+</p>
+
+Sélectionner oui si vous souhaitez activer les statistique sur l'utilisation des paquets, dans notre cas nous allons le désactiver.
+
+<p align="left">
+  <img src="img/etape14.png" alt="" width="50%" />
+</p>
