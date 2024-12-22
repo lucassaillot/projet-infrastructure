@@ -31,11 +31,9 @@ Suivez les étapes ci-dessous pour installer votre premier serveur.
 
 ### 1. Installer l'OS
 
-Booter votre serveur ou machine virtuelle sur l'iso debian, vous devrez arriver sur le même écran affiché ci-dessous.
+Booter votre serveur ou machine virtuelle sur l'iso debian, vous devrez arriver sur le même écran affiché ci-dessous.  
+Appuyez sur **Graphical install** pour suivre les étapes d'installation dans une interface graphique. Cela ne signifie pas que le serveur sera configuré avec une interface graphique permanente, car celle-ci sera désactivée lors des étapes suivantes.
 
 ![](/img/etape1.png)
 
 
-```bash
-# Commande pour cloner le dépôt
-git clone https://github.com/utilisateur/mon-projet.git
