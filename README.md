@@ -26,6 +26,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
 - Avoir un logiciel de virtualisation ou un serveur pour pouvoir installer Debian 12 comme OS.
 - Avoir téléchargé l'ISO de Debian 12 ([Télécharger ici](https://www.debian.org/download)).
+- Avoir un logiciel de connexion SSH comme ([Bitsive](https://bitvise.com/ssh-client-download)).
 
 ---
 
