@@ -29,7 +29,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
 ---
 
-## [Étape 1 : Installer l'OS]
+## Étape 1 : Installer l'OS
 
 Avant de commencer toute manipulation il nous faut une machine sous Linux, dans notre cas nous avons choisi Debian 12.
 
