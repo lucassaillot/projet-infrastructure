@@ -6,7 +6,7 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 
 ## Sommaire
 
-- [Étape 1 : Installer l'OS](#%C3%A9tape-1--installer-los)
+- [Étape 1 : Installer l'OS](#Étape-1--installer-los)
 
 ---
 
