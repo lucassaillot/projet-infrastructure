@@ -25,13 +25,14 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
 ---
 
-## Étapes d'installation et d'utilisation
+## Étapes d'installation du projet
 
-Suivez les étapes ci-dessous pour installer et utiliser ce projet.
+Suivez les étapes ci-dessous pour installer votre premier serveur.
 
-### 1. Cloner le répertoire
+### 1. Installer l'OS
 
-Description : Clonez le dépôt sur votre machine locale.
+Booter votre serveur ou machine virtuelle sur l'iso debian, vous devrez arriver sur le même écran affiché ci-dessous.
+
 ![](/img/etape1.png)
 
 
