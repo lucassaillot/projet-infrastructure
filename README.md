@@ -12,8 +12,6 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 - Automatiser les sauvegardes des fichiers du site et de sa base de données.  
 - Rendre la solution web accessible sur un réseau local, à la fois via son adresse IP et un nom de domaine personnalisé.  
 
-
-
 ---
 
 ## Prérequis
@@ -92,11 +90,39 @@ Sélectionner **"Assisté - utiliser un disque entier"** puis vous pouvez clique
 Sélectionner **"France"**.
 
 <p align="left">
-  <img src="img/etape13" alt="" width="50%" />
+  <img src="img/etape13.png" alt="" width="50%" />
 </p>
 
 Sélectionner oui si vous souhaitez activer les statistique sur l'utilisation des paquets, dans notre cas nous allons le désactiver.
 
 <p align="left">
   <img src="img/etape14.png" alt="" width="50%" />
+</p>
+
+### 7. Choix des outils installé par défaut
+
+⚠️ Important, décocher **"environnement de bureau Debian"** et **"GNOME"** (C'est l'interface graphique de Debian, dans notre cas nous voulons qu'une console comme il s'agit d'un serveur).   
+Ainsi que le **Serveur SSH**, nous allons l'installer manuellement.   
+Laissez uniquement les utilitaires usuels du système.
+
+<p align="left">
+  <img src="img/etape15.png" alt="" width="50%" />
+</p>
+
+### 8. Installation de GRUB
+
+Il s’agit du chargeur de démarrage qui permet de booter sur Linux.   
+Mettez **oui** puis sélectionner votre disque.
+
+<p align="left">
+  <img src="img/etape16.png" alt="Sélectionner la langue" width="45%" />
+  <img src="img/etape17.png" alt="Sélectionner le pays" width="45%" />
+</p>
+
+### 9. Redémarrer
+
+Voilà vous avez terminer la première étape de ce guide, vous pouvez maintenant redémarrer votre machine quand cet écran s'affiche :
+
+<p align="left">
+  <img src="img/etape18.png" alt="" width="50%" />
 </p>
