@@ -147,9 +147,33 @@ Nous allons dans ces étapes installer :
 ### 1. Installer et configurer SSH
 
 Dans un premier temps nous allons se connecter à la Machine :
-
+*Vos identifiants sont ceux défini pour l'installation, utiliser l'utilisateur root pour plus de faciliter pour commencer*
 <p align="left">
-  <img src="img/etape18.png" alt="Redémarrer" width="50%" />
+  <img src="img/connexion.png" alt="Connexion" width="75%" />
 </p>
 
+Rentrer les commandes les unes après les autres
 
+```bash
+apt install sudo -y
+sudo apt update
+sudo apt upgrade -y
+sudo apt install openssh-server -y
+```
+
+Une fois effectué, rentrer la commande suivante :
+```bash
+sudo systemctl status sshd
+```
+Vous devrez obtenir un statut "active"
+<p align="left">
+  <img src="img/install_ssh.png" alt="SSH" width="75%" />
+</p>
+
+On va récupérer l'ip local de notre machine pour pouvoir s'y connecter en SSH via notre PC.
+```bash
+ip a
+```
+<p align="left">
+  <img src="img/ip_a.png" alt="IP A" width="75%" />
+</p>
