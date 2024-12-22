@@ -33,7 +33,7 @@ Suivez les étapes ci-dessous pour installer votre premier serveur.
 
 Booter votre serveur ou machine virtuelle sur l'iso debian, vous devrez arriver sur le même écran affiché ci-dessous.
 
-![](/img/etape1.png)
+![](etape1.png)
 
 
 ```bash
