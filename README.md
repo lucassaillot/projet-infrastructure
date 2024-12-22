@@ -50,6 +50,6 @@ Sélectionnez votre **Langue**, **Pays**, et **Disposition du clavier** :
 Sélectionnez le nom de la machine que vous voulez et laisser vide la case domaine.
 
 <p align="center">
-  <img src="img/etape5.png" alt="Sélectionner la langue" width="50%" />
-  <img src="img/etape6.png" alt="Sélectionner le pays" width="50%" />
+  <img src="img/etape5.png" alt="Sélectionner la langue" width="45%" />
+  <img src="img/etape6.png" alt="Sélectionner le pays" width="45%" />
 </p>
