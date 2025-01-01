@@ -177,3 +177,13 @@ ip a
 <p align="left">
   <img src="img/ip_a.png" alt="IP A" width="75%" />
 </p>
+
+Lancer bitsive et configurer le avec l'ip récupéré, le port 22 et les identifiants choisis. Connecter vous et ensuite cliquer sur "New terminal console"
+
+<p align="left">
+  <img src="img/bitsive.png" alt="Bitsive" width="50%" />
+</p>
+
+<p align="left">
+  <img src="img/terminal.png" alt="Bitsive" width="50%" />
+</p>
