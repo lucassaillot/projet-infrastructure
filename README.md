@@ -187,3 +187,23 @@ Lancer bitsive et configurer le avec l'ip récupéré, le port 22 et les identif
 <p align="left">
   <img src="img/terminal.png" alt="Bitsive" width="50%" />
 </p>
+
+Taper cette commande
+```bash
+ip route show
+```
+
+### 2. Définir une IP fixe
+
+Nous allons récupérer la passerelle de notre réseau
+```bash
+ip route show
+```
+Nous obtenons ce résultat :
+default via **192.168.87.2** dev ens33
+
+Nous allons maintenant définir l'ip fixe
+```bash
+su #Se connecter en root
+nano /etc/network/interfaces
+```
