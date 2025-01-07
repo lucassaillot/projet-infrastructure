@@ -178,13 +178,15 @@ Vous devrez obtenir un statut "active"
   <img src="img/install_ssh.png" alt="SSH" width="75%" />
 </p>
 
-On va récupérer l'ip local de notre machine pour pouvoir s'y connecter en SSH via notre PC. (Noté cette IP elle sera utile par la suite)
+On va récupérer l'ip local de notre machine pour pouvoir s'y connecter en SSH via notre PC.
 ```bash
 ip a
 ```
 <p align="left">
   <img src="img/ip_a.png" alt="IP A" width="75%" />
 </p>
+
+Noté bien cette IP et son /, dans notre cas **192.168.87.128/24** <br>
 
 Lancer bitsive et configurer le avec l'ip récupéré, le port 22 et les identifiants choisis. Connecter vous et ensuite cliquer sur "New terminal console"
 
@@ -209,4 +211,7 @@ Nous allons maintenant définir l'ip fixe
 ```bash
 sudo nano /etc/network/interfaces
 ```
+<p align="left">
+  <img src="img/dhcp.png" alt="Bitsive" width="50%" />
+</p>
 
