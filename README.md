@@ -241,14 +241,16 @@ Si tout fonctionne vous recevrez des paquets ce qu'il signifie que votre machine
 
 ### Installation d'Apache
 
-Commençons par installer Apache.
+Commençons par installer Apache. <br>
 Tapez les commandes les unes après les autres.
 ```
 sudo apt install apache2 -y
 sudo systemctl start apache2
 sudo systemctl enable apache2
 ```
+Accéder maintenant à l'ip de votre machine sur votre ordinateur et vous verrez cette page qui signifie que l'installation d'apache s'est bien déroulé.
+
 <p align="left">
-  <img src="img/apache.png" alt="static" width="50%" />
+  <img src="img/apache.png" alt="apache" width="75%" />
 </p>
 
