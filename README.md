@@ -152,6 +152,14 @@ Dans un premier temps nous allons se connecter à la Machine :
   <img src="img/connexion.png" alt="Connexion" width="75%" />
 </p>
 
+Pour commencer on autorisé votre utilisateur à utiliser "sudo" pour plus de facilité, notre utilisateur s'appelle **cesi** dans notre cas.
+
+```
+su #Pour se connecter en root pour régler les paramètres
+echo "cesi ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers
+sudo usermod -aG sudo cesi
+exit #Pour retourner à l'utilisateur cesi
+```
 Rentrer les commandes les unes après les autres
 
 ```bash
@@ -170,10 +178,35 @@ Vous devrez obtenir un statut "active"
   <img src="img/install_ssh.png" alt="SSH" width="75%" />
 </p>
 
-On va récupérer l'ip local de notre machine pour pouvoir s'y connecter en SSH via notre PC.
+On va récupérer l'ip local de notre machine pour pouvoir s'y connecter en SSH via notre PC. (Noté cette IP elle sera utile par la suite)
 ```bash
 ip a
 ```
 <p align="left">
   <img src="img/ip_a.png" alt="IP A" width="75%" />
 </p>
+
+Lancer bitsive et configurer le avec l'ip récupéré, le port 22 et les identifiants choisis. Connecter vous et ensuite cliquer sur "New terminal console"
+
+<p align="left">
+  <img src="img/bitsive.png" alt="Bitsive" width="50%" />
+</p>
+
+<p align="left">
+  <img src="img/terminal.png" alt="Bitsive" width="50%" />
+</p>
+
+### 2. Définir une IP fixe
+
+Nous allons récupérer la passerelle de notre réseau
+```bash
+ip route show
+```
+Nous obtenons ce résultat :
+default via **192.168.87.2** dev ens33
+
+Nous allons maintenant définir l'ip fixe
+```bash
+sudo nano /etc/network/interfaces
+```
+
