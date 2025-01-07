@@ -238,3 +238,17 @@ Si tout c'est bien passé vous pouvez maintenant effectuer la commande suivante 
 ping google.com
 ```
 Si tout fonctionne vous recevrez des paquets ce qu'il signifie que votre machine à internet et une adresse IP fixe.
+
+### Installation d'Apache
+
+Commençons par installer Apache.
+Tapez les commandes les unes après les autres.
+```
+sudo apt install apache2 -y
+sudo systemctl start apache2
+sudo systemctl enable apache2
+```
+<p align="left">
+  <img src="img/apache.png" alt="static" width="50%" />
+</p>
+
