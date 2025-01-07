@@ -212,6 +212,29 @@ Nous allons maintenant définir l'ip fixe
 sudo nano /etc/network/interfaces
 ```
 <p align="left">
-  <img src="img/dhcp.png" alt="Bitsive" width="50%" />
+  <img src="img/dhcp.png" alt="dhcp" width="50%" />
 </p>
 
+Par défaut l'interface est réglé en DHCP, qui fait que l'ip est dynamique.
+Nous avons au préalable récupéré l'ip fixe à mettre et la passerelle.
+Voilà ce qu'il faut remplir à la place de DHCP, address correspond à l'ip récupéré avec son masque et le gateway correspond à la passerelle.
+```
+iface ens33 inet static
+        address 192.168.87.128/24
+        gateway 192.168.87.2
+```
+<p align="left">
+  <img src="img/static.png" alt="static" width="50%" />
+</p>
+
+Pour enregistrer et quitter (CTRL + S et CTRL + X) <br>
+
+Nous allons maintenant redémarrer le service réseau :
+```
+sudo systemctl restart networking.service
+```
+Si tout c'est bien passé vous pouvez maintenant effectuer la commande suivante :
+```
+ping google.com
+```
+Si tout fonctionne vous recevrez des paquets ce qu'il signifie que votre machine à internet et une adresse IP fixe.
