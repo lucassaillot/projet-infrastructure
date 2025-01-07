@@ -215,3 +215,9 @@ sudo nano /etc/network/interfaces
   <img src="img/dhcp.png" alt="Bitsive" width="50%" />
 </p>
 
+Par défaut l'interface est réglé en DHCP, qui fait que l'ip est dynamique.
+Nous avons au préalable récupéré l'ip fixe à mettre et la passerelle.
+
+<p align="left">
+  <img src="img/static.png" alt="Bitsive" width="50%" />
+</p>
