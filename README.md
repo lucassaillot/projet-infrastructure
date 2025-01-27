@@ -8,6 +8,7 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 
 - [Étape 1 : Installer l'OS](#Étape-1--installer-los)
 - [Étape 2 : Environnement](#étape-2--environnement)
+- [Étape 3 : Premier site](#étape-3--premier-site)
 
 ---
 
@@ -301,3 +302,5 @@ sudo mysql_secure_installation
 - Supprimer la base de données de test : Répondez Oui.
 - Recharger les tables de privilèges : Répondez Oui.
 
+
+## Étape 3 : Premier site
