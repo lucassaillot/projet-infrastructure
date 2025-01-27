@@ -276,3 +276,28 @@ phpinfo();
 Pour enregistrer et quitter (CTRL + S et CTRL + X) <br>
 Rendez-vous sur votre adresse IP /info.php dans notre cas :
 http://192.168.87.129/info.php
+<p align="left">
+  <img src="img/php.png" alt="apache" width="75%" />
+</p>
+
+Voilà PHP est installé et fonctionnel !
+
+### 5. Installation de MariaDB
+Pour installer MariaDB :
+```
+sudo apt update && sudo apt upgrade -y
+sudo apt install mariadb-server -y
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+```
+Voilà MariaDB est installé mais il va falloir à présent sécurisé l'installation :
+
+```
+sudo mysql_secure_installation
+```
+- Définir le mot de passe root (si demandé).
+- Supprimer les utilisateurs anonymes : Répondez Oui.
+- Désactiver l'accès root à distance : Répondez Oui.
+- Supprimer la base de données de test : Répondez Oui.
+- Recharger les tables de privilèges : Répondez Oui.
+
