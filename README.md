@@ -362,4 +362,8 @@ Nous placer dans ce fichier le code suivant (vous êtes libre de placer le code 
 </body>
 </html>
 ```
-
+Pour enregistrer et quitter (CTRL + S et CTRL + X) <br>
+Rendez-vous sur l'ip /monsite, dans notre cas : http://192.168.87.128/monsite/
+<p align="left">
+  <img src="img/monsite.png" alt="apache" width="75%" />
+</p>
