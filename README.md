@@ -304,3 +304,62 @@ sudo mysql_secure_installation
 
 
 ## Étape 3 : Premier site
+Placez vous dans le dossier apache :
+```
+cd /var/www/html
+```
+Créer un dossier monsite :
+```
+sudo mkdir monsite
+```
+Placer vous dans ce dossier, créer et modifier un fichier index.php :
+```
+cd ./monsite
+sudo nano index.php
+```
+Nous placer dans ce fichier le code suivant (vous êtes libre de placer le code que vous voulez) :
+```
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue sur mon site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        p {
+            color: #666;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue sur notre site</h1>
+        <p><?php echo "Projet infrastructure"; ?></p>
+    </div>
+</body>
+</html>
+```
+
