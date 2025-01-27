@@ -140,8 +140,8 @@ Voilà vous avez terminé la première étape de ce guide, vous pouvez maintenan
 
 Nous allons dans ces étapes installer :
 - SSH
-- PHP
 - Apache
+- PHP
 - Base de donnée
 
 ### 1. Installer et configurer SSH
@@ -239,7 +239,7 @@ ping google.com
 ```
 Si tout fonctionne vous recevrez des paquets ce qu'il signifie que votre machine à internet et une adresse IP fixe.
 
-### Installation d'Apache
+### 3. Installation d'Apache
 
 Commençons par installer Apache. <br>
 Tapez les commandes les unes après les autres.
@@ -254,3 +254,25 @@ Accéder maintenant à l'ip de votre machine sur votre ordinateur et vous verrez
   <img src="img/apache.png" alt="apache" width="75%" />
 </p>
 
+### 4. Installation PHP
+
+Nous allons installer PHP avec la commande suivante :
+```
+sudo apt install -y php libapache2-mod-php
+sudo apt-get update
+```
+
+Nous allons à présent vérifier si php est correctement installé.
+Commençons par créer et éditer un fichier info.php dans le dossier apache :
+```
+sudo nano /var/www/html/info.php
+```
+Nous allons utiliser une fonction php qui permet de vérifier si tout est bien installé :
+```
+<?php
+phpinfo();
+?>
+```
+Pour enregistrer et quitter (CTRL + S et CTRL + X) <br>
+Rendez-vous sur votre adresse IP /info.php dans notre cas :
+http://192.168.87.129/info.php
