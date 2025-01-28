@@ -394,5 +394,5 @@ Copier dans ce fichier votre clé, puis pour enregistrer et quitter (CTRL + S et
 
 Vous pouvez maintenant vous reconnecter avec votre clé Public SSH :
 <p align="left">
-  <img src="img/ssh_public_key.ong" alt="apache" width="50%" />
+  <img src="img/ssh_public_key.png" alt="apache" width="50%" />
 </p>
