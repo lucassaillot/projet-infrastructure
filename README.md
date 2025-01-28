@@ -29,8 +29,8 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
 - Avoir un logiciel de virtualisation ou un serveur pour pouvoir installer Debian 12 comme OS.
 - Avoir téléchargé l'ISO de Debian 12 ([Télécharger ici](https://www.debian.org/download)).
-- Avoir un logiciel de connexion SSH comme ([Bitsive](https://bitvise.com/ssh-client-download)).
-
+- Avoir un logiciel de connexion SSH comme [Bitsive](https://bitvise.com/ssh-client-download).
+- Avoir le logiciel [WinSCP](https://winscp.net/eng/downloads.php)
 ---
 
 ## Étape 1 : Installer l'OS
@@ -400,3 +400,68 @@ Vous pouvez maintenant vous reconnecter avec votre clé Public SSH en choisissan
 <p align="left">
   <img src="img/ssh_public_key.png" alt="apache" width="50%" />
 </p>
+
+### Connexion SFTP
+Nous allons créer deux utilisateurs dev1 et dev2 qui vont avoir accès en SFTP au dossier /var/www/html/monsite et seulement ce dossier :
+Commençons par créer un groupe sftpusers :
+```
+sudo groupadd sftpusers
+```
+
+Nous allons maintenant créer les utilisateurs :
+```
+# Création l'utilisateur Dev1
+sudo useradd -g sftpusers -d /var/www/html/monsite -s /usr/sbin/nologin dev1
+sudo passwd dev1
+
+# Création l'utilisateur Dev2
+sudo useradd -g sftpusers -d /var/www/html/monsite -s /usr/sbin/nologin dev2
+sudo passwd dev2
+```
+Possédé par root
+Non modifiable par l’utilisateur (permissions classiques : 755)
+```
+sudo chown root:root /var/www/html/monsite
+sudo chmod 755 /var/www/html/monsite
+```
+
+Autoriser les sftpusers à modifier les fichiers de monsite
+```
+sudo chown -R root:sftpusers /var/www/html/monsite/*
+sudo chmod -R g+rw /var/www/html/monsite/*
+```
+
+On va maintenant configurer le SFTP :
+```
+sudo nano /etc/ssh/sshd_config
+```
+Trouver la ligne suivante :
+```
+Subsystem       sftp    /usr/lib/openssh/sftp-server
+```
+
+Puis ajouter ceci à la suite :
+```
+Match Group sftpusers
+  ChrootDirectory /var/www/html/monsite
+  ForceCommand internal-sftp
+  AllowTCPForwarding no
+  X11Forwarding no
+```
+Pour enregistrer et quitter (CTRL + S et CTRL + X) <br>
+Redémarrer SSH :
+```
+sudo systemctl restart ssh
+```
+Ouvrez WinSCP et ajouter un nouvelle connexion SFTP :
+- Nom d'hôte : IP de votre VM
+- Port : 22
+- User : dev1 ou dev2
+- MDP : celui choisi par vous
+<p align="left">
+  <img src="img/WinSCP_Connexion.png" alt="apache" width="50%" />
+</p>
+<p align="left">
+  <img src="img/WinSCP_Connecte.png" alt="apache" width="50%" />
+</p>
+
