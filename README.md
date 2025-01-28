@@ -369,7 +369,7 @@ Rendez-vous sur l'ip /monsite, dans notre cas : http://192.168.87.128/monsite/
   <img src="img/monsite.png" alt="apache" width="75%" />
 </p>
 
-## Étape 4 : Connexion SSH par Clé :
+## Étape 4 : Connexion SSH par Clé
 Ouvrez bitvise puis cliquer sur "Client key manager"
 <p align="left">
   <img src="img/clientmanager.png" alt="apache" width="50%" />
