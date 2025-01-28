@@ -10,7 +10,7 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 - [Étape 2 : Environnement](#étape-2--environnement)
 - [Étape 3 : Premier site](#étape-3--premier-site)
 - [Étape 4 : Connexion SSH par Clé / SFTP](#étape-4--connexion-ssh-par-clé--sftp)
-- [Étape 5 : Configuration de la base de données](#)
+- [Étape 5 : Configuration de la base de données](#étape-5---configuration-de-la-base-de-données)
 
 ---
 
@@ -466,4 +466,26 @@ Ouvrez WinSCP et ajouter un nouvelle connexion SFTP :
   <img src="img/WinSCP_Connecte.png" alt="apache" width="50%" />
 </p>
 
-## Partie 5 - Configuration de la base de données
+## Étape 5 - Configuration de la base de données
+
+Connectez vous à la base de donnée :
+```
+mysql -u root -p
+```
+Création de la base de donnée "cesibdd" :
+```
+CREATE DATABASE cesibdd;
+```
+Créer l'utilisateur dibdd (remplacer mot_de_passe par le votre) :
+```
+CREATE USER 'dibdd'@'localhost' IDENTIFIED BY 'mot_de_passe';
+```
+Lui accorder le maximum de privilège :
+```
+GRANT ALL PRIVILEGES ON cesibdd.* TO 'dibdd'@'localhost';
+FLUSH PRIVILEGES;
+```
+Quitter :
+```
+EXIT;
+```
