@@ -9,7 +9,7 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 - [Étape 1 : Installer l'OS](#Étape-1--installer-los)
 - [Étape 2 : Environnement](#étape-2--environnement)
 - [Étape 3 : Premier site](#étape-3--premier-site)
-- [Étape 4 : Connexion SSH par Clé / SFTP](#étape-4--connexion-ssh-par-clé)
+- [Étape 4 : Connexion SSH par Clé / SFTP](#étape-4--connexion-ssh-par-clé--sftp)
 
 ---
 
