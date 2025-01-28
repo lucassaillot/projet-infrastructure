@@ -489,3 +489,5 @@ Quitter :
 ```
 EXIT;
 ```
+
+## Étape 6 - Installation de Wordpress et d'un vhost
