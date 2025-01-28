@@ -9,6 +9,7 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 - [Étape 1 : Installer l'OS](#Étape-1--installer-los)
 - [Étape 2 : Environnement](#étape-2--environnement)
 - [Étape 3 : Premier site](#étape-3--premier-site)
+- [Étape 4 : Connexion SSH par Clé](#étape-4--connexion-ssh-par-clé)
 
 ---
 
@@ -368,7 +369,7 @@ Rendez-vous sur l'ip /monsite, dans notre cas : http://192.168.87.128/monsite/
   <img src="img/monsite.png" alt="apache" width="75%" />
 </p>
 
-## Étape 4 : Connexion SSH par certificat :
+## Étape 4 : Connexion SSH par Clé :
 Ouvrez bitvise puis cliquer sur "Client key manager"
 <p align="left">
   <img src="img/clientmanager.png" alt="apache" width="50%" />
@@ -392,7 +393,10 @@ sudo nano ~/.ssh/authorized_keys
 ```
 Copier dans ce fichier votre clé, puis pour enregistrer et quitter (CTRL + S et CTRL + X)
 
-Vous pouvez maintenant vous reconnecter avec votre clé Public SSH :
+Vous pouvez maintenant vous reconnecter avec votre clé Public SSH en choisissant :
+- Initial method : publickey
+- Client key : celui que vous avez créer
+- Passphrase : votre passphrase
 <p align="left">
   <img src="img/ssh_public_key.png" alt="apache" width="50%" />
 </p>
