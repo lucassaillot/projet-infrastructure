@@ -9,7 +9,7 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 - [Étape 1 : Installer l'OS](#Étape-1--installer-los)
 - [Étape 2 : Environnement](#étape-2--environnement)
 - [Étape 3 : Premier site](#étape-3--premier-site)
-- [Étape 4 : Connexion SSH par Clé](#étape-4--connexion-ssh-par-clé)
+- [Étape 4 : Connexion SSH par Clé / SFTP](#étape-4--connexion-ssh-par-clé)
 
 ---
 
@@ -369,7 +369,7 @@ Rendez-vous sur l'ip /monsite, dans notre cas : http://192.168.87.128/monsite/
   <img src="img/monsite.png" alt="apache" width="75%" />
 </p>
 
-## Étape 4 : Connexion SSH par Clé
+## Étape 4 : Connexion SSH par Clé / SFTP
 Ouvrez bitvise puis cliquer sur "Client key manager"
 <p align="left">
   <img src="img/clientmanager.png" alt="apache" width="50%" />
