@@ -371,5 +371,28 @@ Rendez-vous sur l'ip /monsite, dans notre cas : http://192.168.87.128/monsite/
 ## Étape 4 : Connexion SSH par certificat :
 Ouvrez bitvise puis cliquer sur "Client key manager"
 <p align="left">
-  <img src="img/monsite.png" alt="apache" width="75%" />
+  <img src="img/clientmanager.png" alt="apache" width="50%" />
+</p>
+
+Cliquez sur "Generate New" et sélectionner RSA, 4096 et votre passphrase
+<p align="left">
+  <img src="img/generate_new_ssh.png" alt="apache" width="25%" />
+</p>
+
+Une fois généré cliquer sur export puis ouvrer le fichier vous debrez avoir votre Clé SSH :
+<p align="left">
+  <img src="img/export_ssh.png" alt="apache" width="50%" />
+</p>
+Copier tout ça, nous allons en avoir besoin.
+
+**Retour sur la VM**
+```
+mkdir ~/.ssh/
+sudo nano ~/.ssh/authorized_keys
+```
+Copier dans ce fichier votre clé, puis pour enregistrer et quitter (CTRL + S et CTRL + X)
+
+Vous pouvez maintenant vous reconnecter avec votre clé Public SSH :
+<p align="left">
+  <img src="img/ssh_public_key.ong" alt="apache" width="50%" />
 </p>
