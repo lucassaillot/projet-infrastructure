@@ -11,6 +11,7 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 - [Étape 3 : Premier site](#étape-3--premier-site)
 - [Étape 4 : Connexion SSH par Clé / SFTP](#étape-4--connexion-ssh-par-clé--sftp)
 - [Étape 5 : Configuration de la base de données](#étape-5---configuration-de-la-base-de-données)
+- [Étape 6 - Installation de Wordpress et d'un vhost](#étape-6---installation-de-wordpress-et-dun-vhost)
 
 ---
 
@@ -549,9 +550,11 @@ Et voilà c'est tout, nos différents sites sont accessible via nom de la machin
 <p align="left">
   <img src="img/domaine_apache.png" alt="apache" width="75%" />
 </p>
+<p><a href="http://vm-projet.local/monsite/">vm-projet.local/monsite/</a></p>
 <p align="left">
   <img src="img/domaine_monsite.png" alt="apache" width="75%" />
 </p>
+<p><a href="http://vm-projet.local/wordpress/">vm-projet.local/wordpress/</a></p>
 <p align="left">
   <img src="img/domaine_wordpress.png" alt="apache" width="75%" />
 </p>
