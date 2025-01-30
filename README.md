@@ -12,6 +12,8 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 - [Étape 4 : Connexion SSH par Clé / SFTP](#étape-4--connexion-ssh-par-clé--sftp)
 - [Étape 5 : Configuration de la base de données](#étape-5---configuration-de-la-base-de-données)
 - [Étape 6 - Installation de Wordpress et d'un vhost](#étape-6---installation-de-wordpress-et-dun-vhost)
+- [Étape 7 - Sauvegarde & Restauration d’un site Web](##étape-7---sauvegarde--restauration-dun-site-web)
+- [✅ Checklist du projet](#-checklist-du-projet)
 
 ---
 
@@ -31,7 +33,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
 - Avoir un logiciel de virtualisation ou un serveur pour pouvoir installer Debian 12 comme OS.
 - Avoir téléchargé l'ISO de Debian 12 ([Télécharger ici](https://www.debian.org/download)).
-- Avoir un logiciel de connexion SSH comme [Bitsive](https://bitvise.com/ssh-client-download).
+- Avoir un logiciel de connexion SSH comme [Bitvive](https://bitvise.com/ssh-client-download).
 - Avoir le logiciel [WinSCP](https://winscp.net/eng/downloads.php)
 ---
 
@@ -41,7 +43,7 @@ Avant de commencer toute manipulation il nous faut une machine sous Linux, dans 
 
 ### 1. Booter l'ISO
 
-Booter votre serveur ou machine virtuelle sur l'iso debian, vous devrez arriver sur le même écran affiché ci-dessous.  
+Booter votre serveur ou machine virtuelle sur l'ISO Debian, vous devrez arriver sur le même écran affiché ci-dessous.  
 Appuyez sur **Graphical install** pour suivre les étapes d'installation dans une interface graphique. Cela ne signifie pas que le serveur sera configuré avec une interface graphique permanente, car celle-ci sera désactivée lors des étapes suivantes.
 
 <p align="left">
@@ -60,7 +62,7 @@ Sélectionnez votre **Langue**, **Pays**, et **Disposition du clavier** :
 
 ### 3. Nom de la machine
 
-Sélectionnez le nom de la machine que vous voulez et laisser vide la case domaine.
+Sélectionnez le nom de la machine que vous voulez et laissez vide la case domaine.
 
 <p align="left">
   <img src="img/etape5.png" alt="Nom de la machine" width="45%" />
@@ -311,16 +313,16 @@ Placez vous dans le dossier apache :
 ```
 cd /var/www/html
 ```
-Créer un dossier monsite :
+Créez un dossier monsite :
 ```
 sudo mkdir monsite
 ```
-Placer vous dans ce dossier, créer et modifier un fichier index.php :
+Placez vous dans ce dossier, créer et modifier un fichier index.php :
 ```
 cd ./monsite
 sudo nano index.php
 ```
-Nous placer dans ce fichier le code suivant (vous êtes libre de placer le code que vous voulez) :
+Nous plaçons dans ce fichier le code suivant (vous êtes libre de placer le code que vous voulez) :
 ```
 <!DOCTYPE html>
 <html lang="fr">
@@ -382,7 +384,7 @@ Cliquez sur "Generate New" et sélectionner RSA, 4096 et votre passphrase
   <img src="img/generate_new_ssh.png" alt="apache" width="25%" />
 </p>
 
-Une fois généré cliquer sur export puis ouvrer le fichier vous debrez avoir votre Clé SSH :
+Une fois généré cliquez sur export puis ouvrez le fichier vous debrez avoir votre Clé SSH :
 <p align="left">
   <img src="img/export_ssh.png" alt="apache" width="50%" />
 </p>
@@ -404,7 +406,7 @@ Vous pouvez maintenant vous reconnecter avec votre clé Public SSH en choisissan
 </p>
 
 ### Connexion SFTP
-Nous allons créer deux utilisateurs dev1 et dev2 qui vont avoir accès en SFTP au dossier /var/www/html/monsite et seulement ce dossier :
+Nous allons créez deux utilisateurs dev1 et dev2 qui vont avoir accès en SFTP au dossier /var/www/html/monsite et seulement ce dossier :
 Commençons par créer un groupe sftpusers :
 ```
 sudo groupadd sftpusers
@@ -427,7 +429,7 @@ sudo chown root:root /var/www/html/monsite
 sudo chmod 755 /var/www/html/monsite
 ```
 
-Autoriser les sftpusers à modifier les fichiers de monsite
+Autorisez les sftpusers à modifier les fichiers de monsite
 ```
 sudo chown -R root:sftpusers /var/www/html/monsite/*
 sudo chmod -R g+rw /var/www/html/monsite/*
@@ -455,7 +457,7 @@ Redémarrer SSH :
 ```
 sudo systemctl restart ssh
 ```
-Ouvrez WinSCP et ajouter un nouvelle connexion SFTP :
+Ouvrez WinSCP et ajoutez une nouvelle connexion SFTP :
 - Nom d'hôte : IP de votre VM
 - Port : 22
 - User : dev1 ou dev2
@@ -477,7 +479,7 @@ Création de la base de donnée "cesibdd" :
 ```
 CREATE DATABASE cesibdd;
 ```
-Créer l'utilisateur dibdd (remplacer mot_de_passe par le votre) :
+Créez l'utilisateur dibdd (remplacer mot_de_passe par le votre) :
 ```
 CREATE USER 'dibdd'@'localhost' IDENTIFIED BY 'mot_de_passe';
 ```
@@ -486,7 +488,7 @@ Lui accorder le maximum de privilège :
 GRANT ALL PRIVILEGES ON cesibdd.* TO 'dibdd'@'localhost';
 FLUSH PRIVILEGES;
 ```
-Quitter :
+Quittez :
 ```
 EXIT;
 ```
@@ -509,7 +511,7 @@ Dézipper le fichier wordpress.zip :
 ```
 sudo unzip wordpress.zip
 ```
-Installer l'extension php-mysql pour permette une connexion à la base de donnée et redémarrer le serveur apache :
+Installez l'extension php-mysql pour permette une connexion à la base de donnée et redémarrer le serveur apache :
 ```
 sudo apt install php-mysql
 sudo systemctl restart apache2
@@ -558,3 +560,228 @@ Et voilà c'est tout, nos différents sites sont accessible via nom de la machin
 <p align="left">
   <img src="img/domaine_wordpress.png" alt="apache" width="75%" />
 </p>
+
+## Étape 7 - Sauvegarde & Restauration d’un site Web
+
+### Script DB Manager
+
+Pour commencer créez et modifier un fichier db_manager.sh qui va nous permettre de sauvegarder / restaurer et supprimer la db du Wordpress :
+```
+sudo nano ./db_manager.sh
+```
+⚠️ **Attention** : vous devez rentrer vos informations ici de votre base de donnée
+- DB_NAME="cesibdd"
+- DB_USER="root"
+- DB_PASS="cesi" <br>
+Rentrez le script suivant dedans :
+```
+#!/bin/bash
+
+# Définition des variables
+DB_NAME="cesibdd"
+DB_USER="root"
+DB_PASS="cesi"
+DUMP_DIR="/tmp/db"
+DUMP_FILE="$DUMP_DIR/backup.sql"
+
+# Création du dossier si nécessaire
+mkdir -p $DUMP_DIR
+
+# Fonction de sauvegarde
+backup_db() {
+    echo "Sauvegarde de la base de données..."
+    mysqldump -u $DB_USER -p$DB_PASS $DB_NAME > $DUMP_FILE
+
+    if [ $? -eq 0 ]; then
+        echo "Sauvegarde réussie : $DUMP_FILE"
+    else
+        echo "Erreur lors de la sauvegarde"
+    fi
+}
+
+# Fonction de restauration
+restore_db() {
+    echo "Restauration de la base de données..."
+
+    # Vérifier si le fichier de sauvegarde existe
+    if [ -f "$DUMP_FILE" ]; then
+        mysql -u $DB_USER -p$DB_PASS -e "DROP DATABASE IF EXISTS $DB_NAME; CREATE DATABASE $DB_NAME;"
+        mysql -u $DB_USER -p$DB_PASS $DB_NAME < $DUMP_FILE
+
+        if [ $? -eq 0 ]; then
+            echo "Restauration réussie depuis $DUMP_FILE"
+        else
+            echo "Erreur lors de la restauration"
+        fi
+    else
+        echo "Aucun fichier de sauvegarde trouvé !"
+    fi
+}
+
+delete_db() {
+        echo "Suppression de la base de données..."
+
+        mysql -u $DB_USER -p$DB_PASS -e "DROP DATABASE IF EXISTS $DB_NAME;"
+
+        if [ $? -eq 0 ]; then
+                echo "Base de données supprimée avec succès"
+        else
+                echo "Erreur lors de la suppression"
+        fi
+}
+
+# Menu interactif
+echo "Que souhaitez-vous faire ?"
+echo "1) Sauvegarder la base de données"
+echo "2) Restaurer la base de données"
+echo "3) Supprimer la base de données"
+read -p "Entrez votre choix (1 ou 2 ou 3) : " choix
+
+case $choix in
+    1)
+        backup_db
+        ;;
+    2)
+        restore_db
+        ;;
+    3)  delete_db
+        ;;
+    *)
+        echo "Choix invalide. Veuillez choisir 1, 2 ou 3."
+        ;;
+esac
+```
+Mettez à jour les droits du fichier :
+```
+sudo chmod +x ./db_manager.sh
+```
+Pour lancer le script :
+```
+./db_manager.sh
+```
+Vous aurez ensuite le choix entre 3 options (Sauvegarder, restaurer, supprimer)
+
+### Script CMS Manager
+
+Pour commencer créez et modifier un fichier cms_manager.sh qui va nous permette de sauvegarder / restaurer et supprimer votre site Wordpress :
+```
+sudo nano ./cms_manager.sh
+```
+⚠️ **Attention** : vous devez rentrer vos informations ici de votre emplacement wordpress
+- CMS_DIR="/var/www/html/wordpress" <br>
+Rentrez le script suivant dedans :
+```
+#!/bin/bash
+
+# Définition des variables
+CMS_DIR="/var/www/html/wordpress"
+BACKUP_DIR="/tmp/cms"
+BACKUP_FILE="$BACKUP_DIR/wordpress_backup.tar.gz"
+
+# Création du dossier de sauvegarde si nécessaire
+mkdir -p $BACKUP_DIR
+
+# Fonction de sauvegarde
+backup_cms() {
+    echo "Sauvegarde des fichiers de WordPress..."
+    sudo tar -czvf $BACKUP_FILE $CMS_DIR
+
+    if [ $? -eq 0 ]; then
+        echo "Sauvegarde réussie : $BACKUP_FILE"
+    else
+        echo "Erreur lors de la sauvegarde"
+    fi
+}
+
+# Fonction de restauration
+restore_cms() {
+    echo "Restauration des fichiers de WordPress..."
+
+    # Vérifier si le fichier de sauvegarde existe
+    if [ -f "$BACKUP_FILE" ]; then
+        sudo tar -xzvf $BACKUP_FILE -C /
+
+        if [ $? -eq 0 ]; then
+            echo "Restauration réussie depuis $BACKUP_FILE"
+        else
+            echo "Erreur lors de la restauration"
+        fi
+    else
+        echo "Aucun fichier de sauvegarde trouvé !"
+    fi
+}
+
+# Fonction de suppression
+delete_cms() {
+    echo "Suppression des fichiers de WordPress..."
+    sudo rm -rf $CMS_DIR
+
+    if [ $? -eq 0 ]; then
+        echo "Fichiers supprimés avec succès"
+    else
+        echo "Erreur lors de la suppression"
+    fi
+}
+
+# Menu interactif
+echo "Que souhaitez-vous faire ?"
+echo "1) Sauvegarder le site WordPress"
+echo "2) Restaurer le site WordPress"
+echo "3) Supprimer le site WordPress"
+read -p "Entrez votre choix (1, 2 ou 3) : " choix
+
+case $choix in
+    1)
+        backup_cms
+        ;;
+    2)
+        restore_cms
+        ;;
+    3)
+        delete_cms
+        ;;
+    *)
+        echo "Choix invalide. Veuillez choisir 1, 2 ou 3."
+        ;;
+esac
+```
+Mettez à jour les droits du fichier :
+```
+sudo chmod +x ./cms_manager.sh
+```
+Pour lancer le script :
+```
+./cms_manager.sh
+```
+Vous aurez ensuite le choix entre 3 choix (Sauvegarder, restaurer, supprimer)
+
+## ✅ Checklist du projet
+
+### 🖥️ Installation de Debian 12  
+- OS installé et bootable  
+- IP fixe configurée (`ping google.com` OK)  
+- Utilisateur `root` sécurisé + utilisateur non-root créé  
+
+### 🔒 SSH & Sécurité  
+- SSH actif (`sudo systemctl status sshd`)  
+- Connexion SSH avec mot de passe  
+- Connexion SSH via **clé publique**  
+- SFTP fonctionne pour `dev1` et `dev2`  
+
+### 🌍 Services Web (Apache, PHP, MariaDB)  
+- Apache installé (`sudo systemctl status apache2`)  
+- Page Apache visible (`http://192.168.X.X`)  
+- PHP installé (`http://192.168.X.X/info.php`)  
+- MariaDB installé (`sudo systemctl status mariadb`)  
+- Base `cesibdd` et utilisateur `dibdd` créés  
+
+### 🌐 Sites Web & Accès  
+- `monsite` accessible (`http://192.168.X.X/monsite/`)  
+- `wordpress` installé (`http://192.168.X.X/wordpress/`)  
+- Wordpress connecté à la base `cesibdd`  
+
+### 🔄 Sauvegarde & Restauration  
+- `./db_manager.sh` fonctionne (sauvegarde/restauration DB)  
+- `./cms_manager.sh` fonctionne (sauvegarde/restauration site)
+
+🎯 **Si tout est ok, félication vous avez réussi le tutoriel**
