@@ -526,11 +526,32 @@ Rentrez le nom de la db cesibdd et comme nom d'utilisateur dibdd, et votre mot d
 </p>
 Poursuivez les étapes de configurations en rentrant vos paramètres et vous allez arriver sur cette page : <br>
 Il s'agit de la page de connexion du wordpress elle sera en /wp-admin/ de votre site soit pour nous : <br>
-http://192.168.87.128/wordpress/wp-admin/ <br>
+<p><a href="http://192.168.87.128/wordpress/wp-admin/">http://192.168.87.128/wordpress/wp-admin/</a></p>
+
 <p align="left">
   <img src="img/wordpress_connexion.png" alt="apache" width="75%" />
 </p>
 <p align="left">
   <img src="img/wordpress_installe.png" alt="apache" width="75%" />
 </p>
-Voilà félicitation vous avez réussi à installer Wordpress !
+
+**Voilà félicitation vous avez réussi à installer Wordpress !**
+Vous pouvez modifier des pages comme vous le souhaiter avec le panneau d'administration wordpress.
+
+### Configuration vhost (nom de domaine local)
+Installer Avahi et activer le :
+```
+sudo apt install avahi-daemon
+sudo systemctl enable --now avahi-daemon
+systemctl status avahi-daemon
+```
+Et voilà c'est tout, nos différents sites sont accessible via nom de la machine .local soit pour nous ([vm-projet.local](http://vm-projet.local))
+<p align="left">
+  <img src="img/domaine_apache.png" alt="apache" width="75%" />
+</p>
+<p align="left">
+  <img src="img/domaine_monsite.png" alt="apache" width="75%" />
+</p>
+<p align="left">
+  <img src="img/domaine_wordpress.png" alt="apache" width="75%" />
+</p>
