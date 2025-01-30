@@ -12,6 +12,7 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 - [Étape 4 : Connexion SSH par Clé / SFTP](#étape-4--connexion-ssh-par-clé--sftp)
 - [Étape 5 : Configuration de la base de données](#étape-5---configuration-de-la-base-de-données)
 - [Étape 6 - Installation de Wordpress et d'un vhost](#étape-6---installation-de-wordpress-et-dun-vhost)
+- [Étape 7 - Sauvegarde & Restauration d’un site Web](##étape-7---sauvegarde--restauration-dun-site-web)
 
 ---
 
@@ -558,3 +559,197 @@ Et voilà c'est tout, nos différents sites sont accessible via nom de la machin
 <p align="left">
   <img src="img/domaine_wordpress.png" alt="apache" width="75%" />
 </p>
+
+## Étape 7 - Sauvegarde & Restauration d’un site Web
+
+### Script DB Manager
+
+Pour commencer créer et modifier un fichier db_manager.sh qui va nous permette de sauvegarder / restaurer et supprimer la db du Wordpress :
+```
+sudo nano ./db_manager.sh
+```
+⚠️ **Attention** : vous devez rentrer vos informations ici de votre base de donnée
+- DB_NAME="cesibdd"
+- DB_USER="root"
+- DB_PASS="cesi" <br>
+Rentrez le script suivant dedans :
+```
+#!/bin/bash
+
+# Définition des variables
+DB_NAME="cesibdd"
+DB_USER="root"
+DB_PASS="cesi"
+DUMP_DIR="/tmp/db"
+DUMP_FILE="$DUMP_DIR/backup.sql"
+
+# Création du dossier si nécessaire
+mkdir -p $DUMP_DIR
+
+# Fonction de sauvegarde
+backup_db() {
+    echo "Sauvegarde de la base de données..."
+    mysqldump -u $DB_USER -p$DB_PASS $DB_NAME > $DUMP_FILE
+
+    if [ $? -eq 0 ]; then
+        echo "Sauvegarde réussie : $DUMP_FILE"
+    else
+        echo "Erreur lors de la sauvegarde"
+    fi
+}
+
+# Fonction de restauration
+restore_db() {
+    echo "Restauration de la base de données..."
+
+    # Vérifier si le fichier de sauvegarde existe
+    if [ -f "$DUMP_FILE" ]; then
+        mysql -u $DB_USER -p$DB_PASS -e "DROP DATABASE IF EXISTS $DB_NAME; CREATE DATABASE $DB_NAME;"
+        mysql -u $DB_USER -p$DB_PASS $DB_NAME < $DUMP_FILE
+
+        if [ $? -eq 0 ]; then
+            echo "Restauration réussie depuis $DUMP_FILE"
+        else
+            echo "Erreur lors de la restauration"
+        fi
+    else
+        echo "Aucun fichier de sauvegarde trouvé !"
+    fi
+}
+
+delete_db() {
+        echo "Suppression de la base de données..."
+
+        mysql -u $DB_USER -p$DB_PASS -e "DROP DATABASE IF EXISTS $DB_NAME;"
+
+        if [ $? -eq 0 ]; then
+                echo "Base de données supprimée avec succès"
+        else
+                echo "Erreur lors de la suppression"
+        fi
+}
+
+# Menu interactif
+echo "Que souhaitez-vous faire ?"
+echo "1) Sauvegarder la base de données"
+echo "2) Restaurer la base de données"
+echo "3) Supprimer la base de données"
+read -p "Entrez votre choix (1 ou 2 ou 3) : " choix
+
+case $choix in
+    1)
+        backup_db
+        ;;
+    2)
+        restore_db
+        ;;
+    3)  delete_db
+        ;;
+    *)
+        echo "Choix invalide. Veuillez choisir 1, 2 ou 3."
+        ;;
+esac
+```
+Mettez à jour les droits du fichier :
+```
+sudo chmod +x ./db_manager.sh
+```
+Pour lancer le script :
+```
+./db_manager.sh
+```
+Vous aurez ensuite le choix entre 3 choix (Sauvegarder, restaurer, supprimer)
+
+### Script CMS Manager
+
+Pour commencer créer et modifier un fichier cms_manager.sh qui va nous permette de sauvegarder / restaurer et supprimer votre site Wordpress :
+```
+sudo nano ./cms_manager.sh
+```
+⚠️ **Attention** : vous devez rentrer vos informations ici de votre emplacement wordpress
+- CMS_DIR="/var/www/html/wordpress" <br>
+Rentrez le script suivant dedans :
+```
+#!/bin/bash
+
+# Définition des variables
+CMS_DIR="/var/www/html/wordpress"
+BACKUP_DIR="/tmp/cms"
+BACKUP_FILE="$BACKUP_DIR/wordpress_backup.tar.gz"
+
+# Création du dossier de sauvegarde si nécessaire
+mkdir -p $BACKUP_DIR
+
+# Fonction de sauvegarde
+backup_cms() {
+    echo "Sauvegarde des fichiers de WordPress..."
+    sudo tar -czvf $BACKUP_FILE $CMS_DIR
+
+    if [ $? -eq 0 ]; then
+        echo "Sauvegarde réussie : $BACKUP_FILE"
+    else
+        echo "Erreur lors de la sauvegarde"
+    fi
+}
+
+# Fonction de restauration
+restore_cms() {
+    echo "Restauration des fichiers de WordPress..."
+
+    # Vérifier si le fichier de sauvegarde existe
+    if [ -f "$BACKUP_FILE" ]; then
+        sudo tar -xzvf $BACKUP_FILE -C /
+
+        if [ $? -eq 0 ]; then
+            echo "Restauration réussie depuis $BACKUP_FILE"
+        else
+            echo "Erreur lors de la restauration"
+        fi
+    else
+        echo "Aucun fichier de sauvegarde trouvé !"
+    fi
+}
+
+# Fonction de suppression
+delete_cms() {
+    echo "Suppression des fichiers de WordPress..."
+    sudo rm -rf $CMS_DIR
+
+    if [ $? -eq 0 ]; then
+        echo "Fichiers supprimés avec succès"
+    else
+        echo "Erreur lors de la suppression"
+    fi
+}
+
+# Menu interactif
+echo "Que souhaitez-vous faire ?"
+echo "1) Sauvegarder le site WordPress"
+echo "2) Restaurer le site WordPress"
+echo "3) Supprimer le site WordPress"
+read -p "Entrez votre choix (1, 2 ou 3) : " choix
+
+case $choix in
+    1)
+        backup_cms
+        ;;
+    2)
+        restore_cms
+        ;;
+    3)
+        delete_cms
+        ;;
+    *)
+        echo "Choix invalide. Veuillez choisir 1, 2 ou 3."
+        ;;
+esac
+```
+Mettez à jour les droits du fichier :
+```
+sudo chmod +x ./cms_manager.sh
+```
+Pour lancer le script :
+```
+./cms_manager.sh
+```
+Vous aurez ensuite le choix entre 3 choix (Sauvegarder, restaurer, supprimer)
