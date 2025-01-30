@@ -515,3 +515,19 @@ sudo systemctl restart apache2
 ```
 Configurons Wordpress : <br>
 Aller sur l'url de votre serveur /wordpress/ : http://192.168.87.128/wordpress/
+<p align="left">
+  <img src="img/wordpress.png" alt="apache" width="75%" />
+</p>
+Rentrez le nom de la db cesibdd et comme nom d'utilisateur dibdd, et votre mot de passe créer précédemment dans le tuto :
+<p align="left">
+  <img src="img/wordpress_config.png" alt="apache" width="75%" />
+</p>
+Poursuivez les étapes de configurations en rentrant vos paramètres et vous allez arriver sur cette page : <br>
+Il s'agit de la page de connexion du wordpress elle sera en /wp-admin/ de votre site soit pour nous : http://192.168.87.128/wordpress/wp-admin/
+<p align="left">
+  <img src="img/wordpress_connexion.png" alt="apache" width="75%" />
+</p>
+<p align="left">
+  <img src="img/wordpress_installe.png" alt="apache" width="75%" />
+</p>
+Voilà félicitation vous avez réussi à installer Wordpress !
