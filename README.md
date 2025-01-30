@@ -324,12 +324,17 @@ sudo nano index.php
 ```
 Nous plaçons dans ce fichier le code suivant (vous êtes libre de placer le code que vous voulez) :
 ```
+<?php
+    date_default_timezone_set('Europe/Paris'); // Définition du fuseau horaire
+    $heure = date('H');
+    $date_aujourdhui = date('d/m/Y');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue sur mon site</title>
+    <title>Bienvenue sur notre site</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -347,6 +352,8 @@ Nous plaçons dans ce fichier le code suivant (vous êtes libre de placer le cod
             padding: 2em;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
         }
         h1 {
             color: #333;
@@ -361,8 +368,8 @@ Nous plaçons dans ce fichier le code suivant (vous êtes libre de placer le cod
 </head>
 <body>
     <div class="container">
-        <h1>Bienvenue sur notre site</h1>
-        <p><?php echo "Projet infrastructure"; ?></p>
+        <h1>Bienvenue sur notre site !</h1>
+        <p>Nous sommes le <?php echo $date_aujourdhui; ?>.</p>
     </div>
 </body>
 </html>
