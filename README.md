@@ -159,6 +159,7 @@ Pour commencer on autorisé votre utilisateur à utiliser "sudo" pour plus de fa
 
 ```
 su #Pour se connecter en root pour régler les paramètres
+apt install sudo -y
 echo "cesi ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers
 sudo usermod -aG sudo cesi
 exit #Pour retourner à l'utilisateur cesi
@@ -166,7 +167,6 @@ exit #Pour retourner à l'utilisateur cesi
 Rentrer les commandes les unes après les autres
 
 ```bash
-apt install sudo -y
 sudo apt update
 sudo apt upgrade -y
 sudo apt install openssh-server -y
@@ -491,3 +491,27 @@ EXIT;
 ```
 
 ## Étape 6 - Installation de Wordpress et d'un vhost
+Installer unzip :
+```
+sudo apt update && sudo apt install unzip -y
+```
+
+Placez vous dans le dossier Apache :
+```
+cd /var/www/html/
+```
+Télécharger Wordpress :
+```
+sudo wget -O wordpress.zip https://wordpress.org/latest.zip
+```
+Dézipper le fichier wordpress.zip :
+```
+sudo unzip wordpress.zip
+```
+Installer l'extension php-mysql pour permette une connexion à la base de donnée et redémarrer le serveur apache :
+```
+sudo apt install php-mysql
+sudo systemctl restart apache2
+```
+Configurons Wordpress : <br>
+Aller sur l'url de votre serveur /wordpress/ : http://192.168.87.128/wordpress/
