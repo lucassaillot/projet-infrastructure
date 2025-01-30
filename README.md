@@ -545,7 +545,7 @@ sudo apt install avahi-daemon
 sudo systemctl enable --now avahi-daemon
 systemctl status avahi-daemon
 ```
-Et voilà c'est tout, nos différents sites sont accessible via nom de la machine .local soit pour nous (vm-projet.local)
+Et voilà c'est tout, nos différents sites sont accessible via nom de la machine .local soit pour nous ([vm-projet.local](http://vm-projet.local))
 <p align="left">
   <img src="img/domaine_apache.png" alt="apache" width="75%" />
 </p>
