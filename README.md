@@ -789,6 +789,6 @@ Vous aurez ensuite le choix entre 3 choix (Sauvegarder, restaurer, supprimer)
 
 ### 🔄 Sauvegarde & Restauration  
 - `./db_manager.sh` fonctionne (sauvegarde/restauration DB)  
-- `./cms_manager.sh` fonctionne (sauvegarde/restauration site)
+- `./cms_manager.sh` fonctionne (sauvegarde/restauration SITE)
 
 🎯 **Si tout est ok, félication vous avez réussi le tutoriel**
