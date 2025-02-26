@@ -391,7 +391,7 @@ Cliquez sur "Generate New" et sélectionner RSA, 4096 et votre passphrase
   <img src="img/generate_new_ssh.png" alt="apache" width="25%" />
 </p>
 
-Une fois généré cliquez sur export puis ouvrez le fichier vous debrez avoir votre Clé SSH :
+Une fois généré cliquez sur export OpenSSH Format puis ouvrez le fichier vous debrez avoir votre Clé SSH :
 <p align="left">
   <img src="img/export_ssh.png" alt="apache" width="50%" />
 </p>
