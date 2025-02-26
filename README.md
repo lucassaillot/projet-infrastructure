@@ -442,6 +442,16 @@ sudo chown -R root:sftpusers /var/www/html/monsite/*
 sudo chmod -R g+rw /var/www/html/monsite/*
 ```
 
+Créer leurs répertoires respectif :
+```
+sudo mkdir /var/www/html/monsite/dev1
+sudo chown dev1:sftpusers /var/www/html/monsite/dev1
+sudo chmod 700 /var/www/html/monsite/dev1
+sudo mkdir /var/www/html/monsite/dev2
+sudo chown dev2:sftpusers /var/www/html/monsite/dev2
+sudo chmod 700 /var/www/html/monsite/dev2
+```
+
 On va maintenant configurer le SFTP :
 ```
 sudo nano /etc/ssh/sshd_config
