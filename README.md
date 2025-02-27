@@ -14,6 +14,7 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 - [Étape 6 - Installation de Wordpress et d'un vhost](#étape-6---installation-de-wordpress-et-dun-vhost)
 - [Étape 7 - Sauvegarde & Restauration d’un site Web](#étape-7---sauvegarde--restauration-dun-site-web)
 - [✅ Checklist du projet](#-checklist-du-projet)
+- [Logigramme des scripts](#logigramme)
 
 ---
 
@@ -802,3 +803,8 @@ Vous aurez ensuite le choix entre 3 choix (Sauvegarder, restaurer, supprimer)
 - `./cms_manager.sh` fonctionne (sauvegarde/restauration site)
 
 🎯 **Si tout est ok, félication vous avez réussi le tutoriel**
+
+## Logigramme des scripts de gestion :
+<p align="left">
+  <img src="img/logigramme.png" alt="" width="100%" />
+</p>
