@@ -580,7 +580,7 @@ Et voilà c'est tout, nos différents sites sont accessible via nom de la machin
 </p>
 
 ## Étape 7 - Sauvegarde & Restauration d’un site Web
-
+Le logigramme des scripts est disponible [ici](#logigramme-des-scripts-de-gestion-)
 ### Script DB Manager
 
 Pour commencer créez et modifier un fichier db_manager.sh qui va nous permettre de sauvegarder / restaurer et supprimer la db du Wordpress :
