@@ -12,7 +12,7 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 - [Étape 4 : Connexion SSH par Clé / SFTP](#étape-4--connexion-ssh-par-clé--sftp)
 - [Étape 5 : Configuration de la base de données](#étape-5---configuration-de-la-base-de-données)
 - [Étape 6 - Installation de Wordpress et d'un vhost](#étape-6---installation-de-wordpress-et-dun-vhost)
-- [Étape 7 - Sauvegarde & Restauration d’un site Web](##étape-7---sauvegarde--restauration-dun-site-web)
+- [Étape 7 - Sauvegarde & Restauration d’un site Web](#étape-7---sauvegarde--restauration-dun-site-web)
 - [✅ Checklist du projet](#-checklist-du-projet)
 
 ---
