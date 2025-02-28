@@ -15,7 +15,7 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 - [Étape 7 - Sauvegarde & Restauration d’un site Web](#étape-7---sauvegarde--restauration-dun-site-web)
 - [✅ Checklist du projet](#-checklist-du-projet)
 - [Logigramme des scripts](#logigramme-des-scripts-de-gestion-)
-- 
+- [Tableau des versions des logiciels](#tableau-des-versions-des-logiciels-)
 
 ---
 
