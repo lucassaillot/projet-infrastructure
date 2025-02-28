@@ -15,6 +15,7 @@ Bienvenue sur le **guide d'installation** du projet infrastructure du groupe de 
 - [Étape 7 - Sauvegarde & Restauration d’un site Web](#étape-7---sauvegarde--restauration-dun-site-web)
 - [✅ Checklist du projet](#-checklist-du-projet)
 - [Logigramme des scripts](#logigramme-des-scripts-de-gestion-)
+- 
 
 ---
 
@@ -491,7 +492,7 @@ Ouvrez WinSCP et ajoutez une nouvelle connexion SFTP :
 
 Connectez vous à la base de donnée :
 ```
-mysql -u root -p
+mariadb -u root -p
 ```
 Création de la base de donnée "cesibdd" :
 ```
@@ -808,3 +809,16 @@ Vous aurez ensuite le choix entre 3 choix (Sauvegarder, restaurer, supprimer)
 <p align="left">
   <img src="img/logigramme.png" alt="" width="100%" />
 </p>
+
+## Tableau des versions des logiciels :
+
+| Logiciels / OS | Version |
+| -------------- | ------- |
+| VMware Workstation Pro | 17.6.2 |
+| Debian | 12.8.0 |
+| Apache | 2.4.62 |
+| PHP | 8.2.26 |
+| MariaDB | 10.11.6 |
+| Wodpress | 6.7.2 |
+| WinSCP | 6.3.7 |
+| Bitvise | 9.42 |
